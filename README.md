@@ -47,16 +47,25 @@ Add this upstream repo
 ####Note:
 If you want to use the Redis-Cloud with Django see [the wiki](https://github.com/rancavil/django-openshift-quickstart/wiki/Django-1.6-with-Redis-Cloud) 
 
+If you are using some other quickstart repo, make sure it has a superuser by the name of 'admin'. If it doesn't, the system will never be able to create an admin
+
+Make sure all dependencies are satisfied. e.g. If your app requires celery, then ssh to your instance and install Celery using pip
+
+    pip install Celery
+    
 Then push the repo upstream
 
     git push
 
 Here, the [admin user name and password will be displayed](#admin-user-name-and-password), so pay
-special attention.
+special attention. .
 	
 That's it. You can now checkout your application at:
 
     http://djangoproj-$yournamespace.rhcloud.com
+
+####Note:
+If pre-build or post-build hooks fail for any reason, add a new file, commit and push again, it will re-deploy.
 
 Admin user name and password
 ----------------------------
